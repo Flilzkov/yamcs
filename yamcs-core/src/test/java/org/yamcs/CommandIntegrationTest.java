@@ -46,7 +46,8 @@ public class CommandIntegrationTest extends AbstractIntegrationTest {
     public void prepareTests() throws InterruptedException {
         subscription = yamcsClient.createCommandSubscription();
         captor = MessageCaptor.of(subscription);
-
+        LoggingUtils.enableLogging();
+        
         SubscribeCommandsRequest request = SubscribeCommandsRequest.newBuilder()
                 .setInstance(yamcsInstance)
                 .setProcessor("realtime")
