@@ -16,7 +16,7 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
       - name: Run test suite
-        run: mvn --DskipTests install && mvn -B --no-transfer-progress -Dtest=CommandIntegrationTest -pl=yamcs-core -Dsurefire.useFile=false test
+        run: mvn -DskipTests install && mvn -B --no-transfer-progress -Dtest=CommandIntegrationTest -pl=yamcs-core -Dsurefire.useFile=false test
         #run: mvn -B --no-transfer-progress -Dsurefire.useFile=false test
 
   web:
